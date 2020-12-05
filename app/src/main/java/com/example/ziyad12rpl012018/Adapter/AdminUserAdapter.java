@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.ziyad12rpl012018.Admin.list_data_customerActivity;
 import com.example.ziyad12rpl012018.Helper.config;
+import com.example.ziyad12rpl012018.EditActivity;
 import com.example.ziyad12rpl012018.Model.UserAdminModel;
 import com.example.ziyad12rpl012018.R;
 
@@ -80,6 +83,7 @@ public class AdminUserAdapter extends RecyclerView.Adapter<AdminUserAdapter.Item
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView tv_username, tv_email, tv_RoleUser;
         private ImageView divDelete;
+        private LinearLayout itemview;
 
 
         public ItemViewHolder(@NonNull View itemView) {
@@ -88,6 +92,7 @@ public class AdminUserAdapter extends RecyclerView.Adapter<AdminUserAdapter.Item
             tv_username = itemView.findViewById(R.id.tvUsername);
             tv_email = itemView.findViewById(R.id.tvEmail);
             tv_RoleUser = itemView.findViewById(R.id.tvRoleUser);
+            itemview = itemView.findViewById(R.id.itemView);
         }
 
         private void bind(final UserAdminModel Amodel) {
@@ -102,6 +107,14 @@ public class AdminUserAdapter extends RecyclerView.Adapter<AdminUserAdapter.Item
 //                    AppHelper.goToUserAdminDetail(i);
 //                }
 //            });
+            itemview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, EditActivity.class);
+                    i.putExtra("EXTRA_ADMIN", mList.get(getAdapterPosition()));
+                    context.startActivity(i);
+                }
+            });
             divDelete.setOnClickListener(new View.OnClickListener() {
                 private void doNothing() {
 

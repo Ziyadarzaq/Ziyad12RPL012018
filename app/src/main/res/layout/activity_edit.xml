@@ -1,10 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Model.EditActivity">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EditActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="147dp"
+        android:layout_height="142dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/ic_logorental" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="EDIT DATA CUSTOMER"
+        android:textColor="#000000"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/txtusernameReg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:hint="Username"
+        android:textColorHint="#797979"
+        android:textStyle="bold"
+        app:backgroundTint="#797979" />
+
+    <EditText
+        android:id="@+id/txtemailReg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#797979"
+        android:textStyle="bold"
+        app:backgroundTint="#797979" />
+
+    <EditText
+        android:id="@+id/txtnotlpReg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="NoTelepon"
+        android:inputType="number"
+        android:textColorHint="#797979"
+        android:textStyle="bold"
+        app:backgroundTint="#797979" />
+
+    <EditText
+        android:id="@+id/txtnoktpReg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="NoKtp"
+        android:inputType="number"
+        android:textColorHint="#797979"
+        android:textStyle="bold"
+        app:backgroundTint="#797979" />
+
+    <EditText
+        android:id="@+id/txtalamatReg"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Alamat"
+        android:inputType="text"
+        android:textColorHint="#797979"
+        android:textStyle="bold"
+        app:backgroundTint="#797979" />
+
+    <Button
+
+        android:id="@+id/btnedit"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_background_rounded"
+        android:text="EDIT"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+</LinearLayout>

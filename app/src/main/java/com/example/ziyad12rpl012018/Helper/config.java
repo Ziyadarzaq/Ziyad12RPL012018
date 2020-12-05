@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.example.ziyad12rpl012018.LoginActivity;
 
 public class config {
-    public static final String BASE_URL = "http://192.168.43.207/rentalsepeda/";
+    public static final String BASE_URL = "http://192.168.43.107/rentalsepeda/";
     public static final String TOAST_AN_ERROR = "ERROR GA ADA USER :)";
 
     private static final String API = "api/";

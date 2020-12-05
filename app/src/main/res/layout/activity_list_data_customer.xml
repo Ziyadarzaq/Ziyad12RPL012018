@@ -43,7 +43,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:paddingRight="3dp"
-                    android:src="@drawable/ic_baseline_delete_24" />
+                    android:src="@drawable/ic_baseline_delete_24"
+                    android:layout_alignParentRight="true" />
 
             </RelativeLayout>
 

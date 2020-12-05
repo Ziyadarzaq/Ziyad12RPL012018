@@ -1,8 +1,12 @@
 package com.example.ziyad12rpl012018.Helper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ziyad12rpl012018.Admin.DetailSepedaAdminActivity;
+import com.example.ziyad12rpl012018.Admin.EditSepedaAdminActivity;
+import com.example.ziyad12rpl012018.Model.SepedaModel;
 import com.example.ziyad12rpl012018.Model.UserAdminModel;
 
 import org.json.JSONObject;
@@ -19,6 +23,18 @@ public class AppHelper {
         item.setAlamat(rowData.optString("alamat"));
 
 
+
+        return item;
+    }
+    public static SepedaModel mapSepedaAdminModel(JSONObject rowData) {
+        SepedaModel item = new SepedaModel();
+        item.setHargaSewa(rowData.optString("hargasewa"));
+        item.setJenisSepeda(rowData.optString("jenissepeda"));
+        item.setKodeSepeda(rowData.optString("kodesepeda"));
+        item.setMerkSepeda(rowData.optString("merksepeda"));
+        item.setWarnasepeda(rowData.optString("warnasepeda"));
+        item.setNamaSepeda(rowData.optString("namasepeda"));
+        item.setGambarSepeda(rowData.optString("gambarsepeda"));
 
         return item;
     }
@@ -41,4 +57,37 @@ public class AppHelper {
 //        context.startActivity(i);
     }
 
+    public static void goToDataAdminDetail(Context context, SepedaModel amodel) {
+        Bundle bundle = new Bundle();
+
+        bundle.putString("id", String.valueOf(amodel.getId()));
+        bundle.putString("namasepeda", amodel.getNamaSepeda().toUpperCase());
+        bundle.putString("kodesepeda", amodel.getKodeSepeda().toUpperCase());
+        bundle.putString("jenissepeda", amodel.getJenisSepeda().toUpperCase());
+        bundle.putString("merksepeda", amodel.getMerkSepeda().toUpperCase());
+        bundle.putString("warnasepeda", amodel.getWarnasepeda().toUpperCase());
+        bundle.putString("hargasewa", amodel.getHargaSewa().toUpperCase());
+
+
+        Intent i = new Intent(context, DetailSepedaAdminActivity.class);
+        i.putExtra("extra_data", amodel);
+        context.startActivity(i);
+    }
+
+    public static void goToDataAdminDetailEdit (Context context, SepedaModel amodel) {
+        Bundle bundle = new Bundle();
+
+        bundle.putString("id", String.valueOf(amodel.getId()));
+        bundle.putString("namasepeda", amodel.getNamaSepeda().toUpperCase());
+        bundle.putString("kodesepeda", amodel.getKodeSepeda().toUpperCase());
+        bundle.putString("jenissepeda", amodel.getJenisSepeda().toUpperCase());
+        bundle.putString("merksepeda", amodel.getMerkSepeda().toUpperCase());
+        bundle.putString("warnasepeda", amodel.getWarnasepeda().toUpperCase());
+        bundle.putString("hargasewa", amodel.getHargaSewa().toUpperCase());
+
+
+        Intent i = new Intent(context, EditSepedaAdminActivity.class);
+        i.putExtra("extra_data", amodel);
+        context.startActivity(i);
+    }
 }
